@@ -1,0 +1,65 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		
+		
+		<table>
+			<tr>
+				<td colspan="4">
+		<input type="text" disabled="disabled" id="a"/></td>
+			</tr>
+			<tr>
+				<td><button onclick="clearAll()">CE</button></td>
+				<td><button>C</button></td>
+				<td><button>DEL</button></td>
+				<td><button onclick="display(this.innerHTML)">/</button></td>
+			</tr>
+			
+			<tr>
+				<td><button onclick="display(this.innerHTML)">7</button></td>
+				<td><button onclick="display(this.innerHTML)">8</button></td>
+				<td><button onclick="display(this.innerHTML)">9</button></td>
+				<td><button onclick="display(this.innerHTML)">*</button></td>
+			</tr>
+			
+			<tr>
+				<td><button onclick="display(this.innerHTML)">4</button></td>
+				<td><button onclick="display(this.innerHTML)">5</button></td>
+				<td><button onclick="display(this.innerHTML)">6</button></td>
+				<td><button onclick="display(this.innerHTML)">-</button></td>
+			</tr>
+			
+			<tr>
+				<td><button onclick="display(this.innerHTML)">1</button></td>
+				<td><button onclick="display(this.innerHTML)">2</button></td>
+				<td><button onclick="display(this.innerHTML)">3</button></td>
+				<td><button onclick="display(this.innerHTML)">+</button></td>
+			</tr>
+			
+			<tr>
+				<td><button>+OR-</button></td>
+				<td><button onclick="display(this.innerHTML)">0</button></td>
+				<td><button onclick="display(this.innerHTML)">.</button></td>
+				<td><button onclick="myfun()">=</button></td>
+			</tr>
+		</table>
+		
+		<script>
+			function myfun(){
+				
+				var a=document.getElementById("a").value;
+				
+				document.getElementById("a").value=eval(a);
+				
+				}
+			function display(val){
+				document.getElementById("a").value+=val;
+				}
+			function clearAll(){
+				document.getElementById("a").value="";
+			}
+		</script>
+	</body>
+</html>
