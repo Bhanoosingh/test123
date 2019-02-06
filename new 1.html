@@ -11,9 +11,9 @@
 		<input type="text" disabled="disabled" id="a"/></td>
 			</tr>
 			<tr>
-				<td><button onclick="clearAll()">CE</button></td>
-				<td><button>C</button></td>
-				<td><button>DEL</button></td>
+				<td><button >CE</button></td>
+				<td><button onclick="clearAll()">C</button></td>
+				<td><button onclick="deleteS()">DEL</button></td>
 				<td><button onclick="display(this.innerHTML)">/</button></td>
 			</tr>
 			
@@ -39,7 +39,7 @@
 			</tr>
 			
 			<tr>
-				<td><button>+OR-</button></td>
+				<td><button onclick="plusOrminus()">+OR-</button></td>
 				<td><button onclick="display(this.innerHTML)">0</button></td>
 				<td><button onclick="display(this.innerHTML)">.</button></td>
 				<td><button onclick="myfun()">=</button></td>
@@ -59,6 +59,34 @@
 				}
 			function clearAll(){
 				document.getElementById("a").value="";
+			}
+			function deleteS(){
+				var str=document.getElementById("a").value;
+				str=str.substring(0,str.length-1);
+				document.getElementById("a").value=str;
+			}
+			function plusOrminus(){
+				var val=document.getElementById("a").value;
+				
+				var flag=0;
+				for(i=0;i<val.length;i++){
+					if(val.charAt(i)=='+' || 
+					   val.charAt(i)=='-' || 
+					   val.charAt(i)=='*' || 
+					   val.charAt(i)=='/'){
+							flag=1;
+							break;
+					   }
+				}
+				
+				if(flag==1){
+					val="("+val+")*-1";
+				}
+				else{
+					val=val*-1;
+					}
+					document.getElementById("a").value=val;
+				
 			}
 		</script>
 	</body>
