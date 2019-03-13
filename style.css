@@ -1,0 +1,8 @@
+*{
+	font-family:Helvetica;
+}
+input[type='text'],input[type='email'],input[type='password']{
+	outline:0px;
+	border-radius:3px;
+	padding:5px;
+}
